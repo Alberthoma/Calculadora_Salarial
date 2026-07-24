@@ -1,7 +1,8 @@
 # Calculadora de Salario Neto
 
-> **Estado actual (2026-07-06)**: PR #2 (login con Firebase) abierto y sin
-> fusionar todavía en https://github.com/Alberthoma/foresee-web/pull/2.
+> **Estado actual (2026-07-24)**: repositorio renombrado de `foresee-web` a
+> **`Calculadora_Salarial`**. Sitio publicado en
+> https://alberthoma.github.io/Calculadora_Salarial/ (versión V 00014).
 > Pendiente verificar reglas de seguridad de Firestore en la consola de
 > Firebase y probar el flujo de login con conexión real. Ver
 > `calculadora-salarial-bitacora.md` para el detalle completo de lo hecho
