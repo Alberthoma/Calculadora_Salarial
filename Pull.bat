@@ -2,11 +2,11 @@
 setlocal EnableExtensions
 
 REM ============== CONFIG ==============
-set "REPO_URL=https://github.com/Alberthoma/foresee-web.git"
+set "REPO_URL=https://github.com/Alberthoma/Calculadora_Salarial.git"
 set "BRANCH=main"
 REM ====================================
 
-title Actualizar calculadora-salarial
+title Actualizar Calculadora_Salarial
 
 cd /d "%~dp0"
 

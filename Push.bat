@@ -1,7 +1,7 @@
 @echo off
 setlocal EnableExtensions EnableDelayedExpansion
 
-title Subir cambios de calculadora-salarial
+title Subir cambios de Calculadora_Salarial
 
 REM Mensaje de commit por parametro (opcional)
 set "COMMIT_MSG=%~1"
@@ -60,6 +60,6 @@ if errorlevel 1 (
 
 echo.
 echo === Listo. Tus cambios ya estan en GitHub. ===
-echo Sitio: https://alberthoma.github.io/foresee-web/
+echo Sitio: https://alberthoma.github.io/Calculadora_Salarial/
 echo.
 pause
