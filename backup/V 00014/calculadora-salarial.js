@@ -8,15 +8,15 @@
    entre dispositivos bajo la cuenta del usuario.
    ========================================================================== */
 
-// Proyecto Firebase exclusivo de esta calculadora. Los datos se almacenan en
-// artifacts/calculadora-salarial/... para aislar el historial de cada usuario.
+// Mismo proyecto Firebase que la app de finanzas, con una colección propia
+// (artifacts/calculadora-salarial/...) para no mezclar los datos de ambas apps.
 const FIREBASE_CONFIG = {
-  apiKey: 'AIzaSyBMAIGrFWvbUc79yTjkHtNKi9jMAwYH1Xs',
-  authDomain: 'calculadora-salarial-6d68e.firebaseapp.com',
-  projectId: 'calculadora-salarial-6d68e',
-  storageBucket: 'calculadora-salarial-6d68e.firebasestorage.app',
-  messagingSenderId: '604354472490',
-  appId: '1:604354472490:web:6d68d9f957bc1348fef153',
+  apiKey: 'AIzaSyCTicX5tqqVr3pK_RFqgvqpRavsUuTvS2g',
+  authDomain: 'wittfinances-282f1.firebaseapp.com',
+  projectId: 'wittfinances-282f1',
+  storageBucket: 'wittfinances-282f1.firebasestorage.app',
+  messagingSenderId: '998192322959',
+  appId: '1:998192322959:web:e2afcdd7f47da3767853fa',
 };
 
 const ENTRIES_PATH = (uid) => `artifacts/calculadora-salarial/users/${uid}/entries`;

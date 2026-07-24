@@ -3,7 +3,7 @@
 /* Service Worker — Calculadora de Salario Neto.
    CACHE_VERSION debe subir en cada release (junto con el footer #app-version);
    eso invalida automáticamente la caché anterior en el evento 'activate'. */
-const CACHE_VERSION = 16;
+const CACHE_VERSION = 14;
 const CACHE_NAME = `calculadora-salarial-cache-v${CACHE_VERSION}`;
 
 const APP_SHELL = [
@@ -12,10 +12,10 @@ const APP_SHELL = [
   'calculadora-salarial.css',
   'calculadora-salarial.js',
   'manifest.json',
-  'Logo/logo.png',
-  'Logo/icon-192.png',
-  'Logo/icon-512.png',
-  'Logo/apple-touch-icon.png',
+  'logo.png',
+  'icon-192.png',
+  'icon-512.png',
+  'apple-touch-icon.png',
 ];
 
 self.addEventListener('install', (event) => {
