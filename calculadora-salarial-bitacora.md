@@ -135,3 +135,71 @@ implementó:
 - El flujo de trabajo de este repo (plan + sugerencias + aprobación antes
   de tocar código, versionado en cada cambio) está documentado en
   `CLAUDE.md` y se carga automáticamente en cada sesión.
+
+---
+
+## Sesión 2026-07-24
+
+### Resumen de lo avanzado desde la sesión anterior (PR #3 al #10)
+
+- Se documentó en `CLAUDE.md` que los PRs se fusionan a `main`
+  automáticamente tras comitear (autorización permanente del usuario, ya
+  no hace falta preguntar por el merge en sí).
+- Se agregó la regla de respaldo `backup/V 000XX/` antes de modificar los
+  4 archivos versionados (ver `CLAUDE.md`).
+- Se reemplazó el logo "$" por el logo real (PNG con transparencia,
+  provisto por el usuario) en header, login, favicon e íconos PWA.
+- Header rediseñado (Opción A): logo arriba-izquierda, tema arriba-derecha
+  en escritorio (abajo-izquierda en móvil junto a "Cerrar sesión"), título
+  centrado en mayúsculas, sin logo/descripción en móvil, header sticky.
+- El formulario "Nuevo/Editar Cálculo" pasó a ser un **modal** (botón
+  "+ Nuevo Cálculo"); el Dashboard solo muestra el historial.
+- Cada entrada del historial es ahora un **acordeón de dos niveles**: nivel
+  exterior colapsado muestra **período de pago** (campo nuevo, obligatorio,
+  Desde/Hasta) + salario neto; al expandir se ve el nivel interior (datos
+  del cálculo + categorías), que ya era colapsable.
+- Se corrigieron dos bugs reales encontrados en el camino: `startEdit()`
+  llamaba a una función inexistente (`loadEntries`) y una referencia a
+  `#user-info` que ya no existía en el HTML.
+- Versión actual de la app: **V 00014**.
+
+### Renombre del repositorio
+
+El usuario renombró el repositorio de GitHub de `foresee-web` a
+**`Calculadora_Salarial`** (con guion bajo, no guion medio — ojo con esto
+al escribir la URL). Puntos importantes:
+
+- **La sesión de Claude no necesitó ningún cambio**: GitHub redirige
+  automáticamente las llamadas a la API y las operaciones git que usan el
+  nombre viejo (`Alberthoma/foresee-web`) hacia el repo renombrado —
+  confirmado con `git fetch` y `get_file_contents` exitosos usando el
+  nombre antiguo después del rename.
+- El sitio publicado (GitHub Pages) pasó de
+  `https://alberthoma.github.io/foresee-web/` a
+  **`https://alberthoma.github.io/Calculadora_Salarial/`**.
+- El usuario tiene 3 scripts `.bat` en su PC de escritorio (carpeta
+  "6 Calculadora Salarial", en `D:\...\$$$ Proyectos\`), entregados
+  directamente como archivo (no viven en el repo):
+  - **Pull.bat** (`actualizar-calculadora-salarial.bat`): clona la primera
+    vez, o hace `git pull origin main` si ya existe `.git`.
+  - **Push.bat** (`subir-calculadora-salarial.bat`): comitea cambios
+    locales primero, luego `git pull --rebase origin main`, luego
+    `git push`. *(Importante: el orden original tenía el pull --rebase
+    ANTES del commit, lo cual falla si hay cambios sin comitear — ya
+    corregido.)*
+  - **actualizar-remoto.bat**: corre `git remote set-url origin` para
+    apuntar al repo renombrado (se hizo una sola vez, ya ejecutado).
+- Las referencias a la URL vieja en `calculadora-salarial.md` (el aviso de
+  "Estado actual") se actualizaron a la nueva. Las menciones de
+  `foresee-web` dentro de las entradas *históricas* de esta bitácora
+  (sesión 2026-07-06) se dejaron intactas a propósito — reflejan el nombre
+  real que tenía el repo en ese momento, no se reescribe historia.
+
+### Pendientes (siguen abiertos)
+
+1. Verificar reglas de seguridad de Firestore en la consola de Firebase
+   (mismo pendiente de la sesión anterior, no resuelto).
+2. Probar el flujo de login/registro/reset de contraseña con conexión real
+   (el sandbox de desarrollo sigue bloqueando el CDN de Firebase).
+3. Migración de datos antiguos de `localStorage` (mismo pendiente, no
+   resuelto).
